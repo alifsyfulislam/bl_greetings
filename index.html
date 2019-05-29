@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="ad.size" content="width=300,height=250">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Banglalink Eid Greetings </title>
+    <!-- <link rel="stylesheet" href="mystyle.css"> -->
+    <style>
+        
+
+@font-face {
+    font-family: 'KongshoMJ';
+    src: url('kongsoMJ/KongshoMJ.eot'); /* IE9 Compat Modes */
+    src: url('kongsoMJ/KongshoMJ.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('kongsoMJ/KongshoMJ.woff') format('woff'), /* Modern Browsers */
+    url('kongsoMJ/KongshoMJ.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('kongsoMJ/KongshoMJ.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'KongshoMJ';
+}
+
+
+body{
+    height: 250px;
+    width: 300px;
+    cursor: pointer;
+    /*overflow: hidden;*/
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.ad_container{
+    height: 250px;
+    width: 300px;
+    transition: all 0.6s ease;
+    background-image: url("images/img1.jpg");
+    background-repeat: no-repeat;
+    background-size: 300px 250px;
+}
+
+.description {
+    height: 150px;
+    width: 145px;
+    font-size: 12px;
+    color: red;
+    background-color: transparent;
+    text-align: center;
+    padding: 2.5%;
+    resize: none;
+    left: 100px;
+    top: 5px;
+    border: none;
+    outline: none;
+}
+
+.description::placeholder{
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+}
+.description_note::placeholder{
+    color: #fff !important;
+}
+
+
+button:focus, button:active{
+    border: 0;
+    outline: 0;
+}
+
+
+.save_btn, .share_btn{
+    border-radius: 5px;
+    height: 23px;
+    width: 64px;
+    bottom: 10px;
+    left: 10px;
+    border: 0;
+}
+
+.save_btn{
+    left: 99px;
+}
+.prev,.next{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    user-select: none;
+    background-color: black;
+    bottom: 10px;
+}
+
+.prev{
+    right: 65px;
+}
+.next {
+    right: 35px;
+}
+
+.socio_box{
+    height: 35px;
+    width: 100px;
+    left: 15px;
+    bottom: 5px;
+    display: none;
+}
+
+.target_link{
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+}
+
+.img_resize{
+    height: 30px;
+    width: 30px;
+}
+
+#canvas{
+    position: absolute;
+    top: 250px;
+}
+
+.facebook:hover,.whatsapp:hover{
+	animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="ad_container absolute">
+        <textarea class="description absolute" placeholder="প্রিয়জনের জন্য আপনার ঈদের শুভেচ্ছাটি এখানে লিখুন!" onfocus="this.placeholder = ''" onclick="noteRewrite()"></textarea>
+        <button type="button" class="save_btn absolute" onclick="saveMessage()"><img src="images/save.jpg" style="border-radius: 5px;"></button>
+        <button type="button" class="share_btn absolute" onclick="shareMessage()"><img src="images/share.jpg" style="border-radius: 5px;"></button>
+        <a class="prev absolute" onclick="plusSlides(1)">&#10094;</a>
+        <a class="next absolute" onclick="plusSlides(1)">&#10095;</a>
+        <div class="socio_box absolute">
+            <span class="target_link facebook"><img src="images/messenger.png" class="img_resize"></span>
+            <span class="target_link whatsapp"><img src="images/whatsapp.png" class="img_resize"></span>
+        </div>
+    </div>
+
+    <canvas id="canvas" width="540" height="281"></canvas>
+
+
+    <script src="myscript.js"></script>
+</body>
+</html>
