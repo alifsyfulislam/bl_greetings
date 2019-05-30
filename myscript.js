@@ -96,6 +96,7 @@ function shareMessage() {
     prev.style.display = 'none';
     next.style.display = 'none';
     socioBox.style.display = 'block';
+	greetings = notes.value;
 
 
     var img = new Image();
